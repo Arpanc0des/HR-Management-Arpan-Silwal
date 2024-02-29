@@ -8,12 +8,12 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("logIn-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
         stage.setTitle("HR Management!");
         stage.setScene(scene);
 
-        LogInController controller = fxmlLoader.getController();
+        DashboardController controller = fxmlLoader.getController();
         controller.setPrimaryStage(stage);
         stage.show();
     }

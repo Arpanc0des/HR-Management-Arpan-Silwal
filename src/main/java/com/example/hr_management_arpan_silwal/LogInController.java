@@ -3,14 +3,12 @@ package com.example.hr_management_arpan_silwal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -56,7 +54,7 @@ public class LogInController implements Initializable {
     public boolean validated() {
         String email = emailInput.getText();
         String password = passwordInput.getText();
-        if (email.isEmpty() || email.equals(null) || password.isEmpty() || password.equals("null")) {
+        if (email.isEmpty() || password.isEmpty()) {
             errorMessage.setText("You cant log in if you dont give me your credentials... Try again please.");
             return false;
         }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hr_management_arpan_silwal.LogInController">
+    <children>
+        <Pane prefHeight="280.0" prefWidth="300.0">
+            <children>
+                <Label layoutX="139.0" layoutY="33.0" text="HR Management Log In" textAlignment="CENTER">
+                    <font>
+                        <Font name="Arial Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="146.0" layoutY="100.0" text="Email:" />
+                <TextField fx:id="emailInput" layoutX="206.0" layoutY="98.0" />
+                <Label layoutX="146.0" layoutY="140.0" text="Password:" />
+                <PasswordField fx:id="passwordInput" layoutX="206.0" layoutY="138.0" />
+                <Button layoutX="225.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleLogIn" text="Log In" />
+                <Label fx:id="errorMessage" layoutX="35.0" layoutY="229.0" prefHeight="20.0" prefWidth="430.0" textAlignment="CENTER">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+</VBox>

@@ -71,12 +71,12 @@ public class LogInController implements Initializable {
 
     private void loadDashboardView() {
         try {
-            // Create a new stage, stage the new scene for the dashboard view, load the controller through the new fxml loader
-            // Since the controller is mentioned in fxml, fxml loader can extract the controller from there.
+            // Set the new scene, set new fxml loader and get the controller from the fxml
             Scene scene = new Scene(new FXMLLoader(getClass().getResource("dashboard-view.fxml")).load());
+            // Override the primary stage's previous scene with the new created one
             primaryStage.setScene(scene);
             primaryStage.show();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hr_management_arpan_silwal.AdminController">
+   <children>
+      <Label layoutX="379.0" layoutY="48.0" text="Admin View">
+         <font>
+            <Font name="Arial Bold" size="29.0" />
+         </font>
+      </Label>
+      <TableView layoutX="36.0" layoutY="48.0" prefHeight="281.0" prefWidth="299.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn prefWidth="75.0" text="Name" />
+            <TableColumn prefWidth="75.0" text="a" />
+            <TableColumn prefWidth="75.0" text="b" />
+        </columns>
+      </TableView>
+      <Button layoutX="379.0" layoutY="238.0" mnemonicParsing="false" text="Create" />
+      <Button onAction="#updateButton" layoutX="498.0" layoutY="238.0" mnemonicParsing="false" text="Update" />
+      <Button onAction="#deleteButton" layoutX="379.0" layoutY="300.0" mnemonicParsing="false" text="Delete" />
+      <Button onAction="#viewButton" layoutX="512.0" layoutY="300.0" mnemonicParsing="false" text="View" />
+      <Button onAction="#backButton" layoutX="455.0" layoutY="349.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

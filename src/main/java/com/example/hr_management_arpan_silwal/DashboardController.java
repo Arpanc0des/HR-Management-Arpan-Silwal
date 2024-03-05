@@ -18,12 +18,15 @@ public class DashboardController {
     @FXML
     public void admin() {
         try {
-            // Set the new scene, set new fxml loader and get the controller from the fxml
-            Scene scene = new Scene(new FXMLLoader(getClass().getResource("admin-view.fxml")).load());
-            // Override the primary stage's previous scene with the new created one
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("admin-view.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            AdminController adminController = loader.getController();
+            adminController.setPrimaryStage(primaryStage); // Pass primaryStage to LogInController
+
             primaryStage.setScene(scene);
             primaryStage.show();
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -31,12 +34,15 @@ public class DashboardController {
     @FXML
     public void employee() {
         try {
-            // Set the new scene, set new fxml loader and get the controller from the fxml
-            Scene scene = new Scene(new FXMLLoader(getClass().getResource("employee-view.fxml")).load());
-            // Override the primary stage's previous scene with the new created one
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("employee-view.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            EmployeeController employeeController = loader.getController();
+            employeeController.setPrimaryStage(primaryStage); // Pass primaryStage to LogInController
+
             primaryStage.setScene(scene);
             primaryStage.show();
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

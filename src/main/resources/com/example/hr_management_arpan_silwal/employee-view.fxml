@@ -14,15 +14,19 @@
         <TableView fx:id="employeeTableView" layoutX="36.0" layoutY="48.0" prefHeight="281.0" prefWidth="299.0">
             <columns>
                 <TableColumn fx:id="idTblField" prefWidth="75.0" text="Employee Id" />
-                <TableColumn fx:id="nameTblField" prefWidth="75.0" text="Employee Name" />
-                <TableColumn fx:id="emailTblField" prefWidth="75.0" text="Employee Email" />
+                <TableColumn fx:id="nameTblField" prefWidth="110.0" text="Employee Name" />
+                <TableColumn fx:id="emailTblField" prefWidth="113.0" text="Employee Email" />
             </columns>
         </TableView>
-        <Button onAction="#createButton" layoutX="379.0" layoutY="238.0" mnemonicParsing="false" text="Create" />
-        <Button onAction="#updateButton" layoutX="498.0" layoutY="238.0" mnemonicParsing="false" text="Update" />
-        <Button onAction="#deleteButton" layoutX="379.0" layoutY="300.0" mnemonicParsing="false" text="Delete" />
-        <Button onAction="#viewButton" layoutX="512.0" layoutY="300.0" mnemonicParsing="false" text="View" />
-        <Button onAction="#backButton" layoutX="455.0" layoutY="349.0" mnemonicParsing="false" text="Back" />
+        <Button layoutX="382.0" layoutY="213.0" mnemonicParsing="false" onAction="#createButton" text="Create" />
+        <Button layoutX="476.0" layoutY="213.0" mnemonicParsing="false" onAction="#updateButton" text="Update" />
+        <Button layoutX="382.0" layoutY="262.0" mnemonicParsing="false" onAction="#deleteButton" text="Delete" />
+        <Button layoutX="489.0" layoutY="262.0" mnemonicParsing="false" onAction="#viewButton" text="View" />
+        <Button layoutX="435.0" layoutY="317.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Label fx:id="errorMessage" layoutX="36.0" layoutY="341.0" />
+      <TextField fx:id="txtIdField" layoutX="381.0" layoutY="108.0" promptText="Employee ID" />
+      <TextField fx:id="txtNameField" layoutX="382.0" layoutY="136.0" promptText="Employee Name" />
+      <TextField fx:id="txtEmailField" layoutX="382.0" layoutY="164.0" promptText="Employee Email" />
     </children>
 
 </AnchorPane>

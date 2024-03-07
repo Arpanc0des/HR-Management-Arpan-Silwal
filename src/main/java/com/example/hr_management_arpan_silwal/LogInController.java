@@ -2,8 +2,6 @@ package com.example.hr_management_arpan_silwal;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -11,32 +9,22 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.ResourceBundle;
 
-public class LogInController implements Initializable {
+public class LogInController {
     @FXML
     public TextField emailInput;
     @FXML
     public PasswordField passwordInput;
     @FXML
     public Label errorMessage;
-    private Map<String, String> userPasswords;
+    private final Map<String, String> userPasswords = new HashMap<>();
+
     private Stage primaryStage;
 
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // Initialize the HashMap
-        userPasswords = new HashMap<>();
-        // Add some sample users and passwords
-        userPasswords.put("user@gmail.com", "pass");
-        userPasswords.put("root@gmail.com", "toor");
     }
 
     @FXML
@@ -44,8 +32,11 @@ public class LogInController implements Initializable {
         if (validated()) {
             String email = emailInput.getText();
             String password = passwordInput.getText();
-
+            // Add some sample users and passwords
+            userPasswords.put("user@gmail.com","pass");
+            userPasswords.put("root@gmail.com","toor");
             if (userPasswords.containsKey(email) && userPasswords.get(email).equals(password)) {
+
                 loadDashboardView();
             } else {
                 errorMessage.setText("Invalid email or password. Please try again.");
@@ -56,7 +47,7 @@ public class LogInController implements Initializable {
     public boolean validated() {
         String email = emailInput.getText();
         String password = passwordInput.getText();
-        if (email.isEmpty() || email.equals(null) || password.isEmpty() || password.equals("null")) {
+        if (email.isEmpty() || password.isEmpty()) {
             errorMessage.setText("You cant log in if you dont give me your credentials... Try again please.");
             return false;
         }
@@ -71,12 +62,15 @@ public class LogInController implements Initializable {
 
     private void loadDashboardView() {
         try {
-            // Set the new scene, set new fxml loader and get the controller from the fxml
-            Scene scene = new Scene(new FXMLLoader(getClass().getResource("dashboard-view.fxml")).load());
-            // Override the primary stage's previous scene with the new created one
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-view.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            DashboardController dashboardController = loader.getController();
+            dashboardController.setPrimaryStage(primaryStage); // Pass primaryStage to DashboardController
+
             primaryStage.setScene(scene);
             primaryStage.show();
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

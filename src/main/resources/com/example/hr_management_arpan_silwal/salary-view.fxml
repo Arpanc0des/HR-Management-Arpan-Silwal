@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hr_management_arpan_silwal.SalaryController">
+   <children>
+      <Label layoutX="367.0" layoutY="48.0" text="Salary View">
+         <font>
+            <Font name="Arial Bold" size="29.0" />
+         </font>
+      </Label>
+      <TableView fx:id="salaryTableView" layoutX="36.0" layoutY="48.0" prefHeight="281.0" prefWidth="299.0">
+        <columns>
+          <TableColumn fx:id="sidTblField" prefWidth="75.0" text="SID" />
+          <TableColumn fx:id="employeeNameTblField" prefWidth="110.0" text="Employee Name" />
+            <TableColumn fx:id="amountTblField" prefWidth="113.0" text="Salary Amount" />
+        </columns>
+      </TableView>
+      <Button layoutX="371.0" layoutY="238.0" mnemonicParsing="false" onAction="#createButton" text="Create" />
+      <TextField fx:id="txtFieldsid" layoutX="371.0" layoutY="93.0" promptText="SID" />
+      <TextField fx:id="txtFieldEmpName" layoutX="371.0" layoutY="132.0" promptText="Employee Name" />
+      <TextField fx:id="txtFieldSalaryAmt" layoutX="371.0" layoutY="175.0" promptText="Salary" />
+      <Button layoutX="469.0" layoutY="238.0" mnemonicParsing="false" onAction="#updateButton" text="Update" />
+      <Button layoutX="371.0" layoutY="300.0" mnemonicParsing="false" onAction="#deleteButton" text="Delete" />
+      <Button layoutX="482.0" layoutY="300.0" mnemonicParsing="false" onAction="#viewButton" text="View" />
+      <Button layoutX="425.0" layoutY="350.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Label fx:id="errorMessage" layoutX="36.0" layoutY="341.0" />
+   </children>
+</AnchorPane>

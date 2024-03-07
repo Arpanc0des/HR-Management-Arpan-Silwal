@@ -11,15 +11,14 @@
                 <Font name="Arial Bold" size="29.0" />
             </font>
         </Label>
-        <TableView layoutX="36.0" layoutY="48.0" prefHeight="281.0" prefWidth="299.0">
+        <TableView fx:id="employeeTableView" layoutX="36.0" layoutY="48.0" prefHeight="281.0" prefWidth="299.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="ID" />
-                <TableColumn prefWidth="75.0" text="Name" />
-                <TableColumn prefWidth="75.0" text="a" />
-                <TableColumn prefWidth="75.0" text="b" />
+                <TableColumn fx:id="idTblField" prefWidth="75.0" text="Employee Id" />
+                <TableColumn fx:id="nameTblField" prefWidth="75.0" text="Employee Name" />
+                <TableColumn fx:id="emailTblField" prefWidth="75.0" text="Employee Email" />
             </columns>
         </TableView>
-        <Button layoutX="379.0" layoutY="238.0" mnemonicParsing="false" text="Create" />
+        <Button onAction="#createButton" layoutX="379.0" layoutY="238.0" mnemonicParsing="false" text="Create" />
         <Button onAction="#updateButton" layoutX="498.0" layoutY="238.0" mnemonicParsing="false" text="Update" />
         <Button onAction="#deleteButton" layoutX="379.0" layoutY="300.0" mnemonicParsing="false" text="Delete" />
         <Button onAction="#viewButton" layoutX="512.0" layoutY="300.0" mnemonicParsing="false" text="View" />

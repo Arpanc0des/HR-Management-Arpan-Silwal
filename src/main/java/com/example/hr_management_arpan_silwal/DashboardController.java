@@ -16,13 +16,13 @@ public class DashboardController {
     }
 
     @FXML
-    public void admin() {
+    public void salary() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("admin-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("salary-view.fxml"));
             Scene scene = new Scene(loader.load());
 
-            AdminController adminController = loader.getController();
-            adminController.setPrimaryStage(primaryStage); // Pass primaryStage to LogInController
+            SalaryController salaryController = loader.getController();
+            salaryController.setPrimaryStage(primaryStage); // Pass primaryStage to LogInController
 
             primaryStage.setScene(scene);
             primaryStage.show();

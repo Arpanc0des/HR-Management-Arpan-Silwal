@@ -13,7 +13,7 @@
                     <Font name="Arial Bold" size="20.0"/>
                 </font>
             </Label>
-            <Button layoutX="125.0" layoutY="188.0" mnemonicParsing="false" onAction="#admin" text="Admin"/>
+            <Button layoutX="125.0" layoutY="188.0" mnemonicParsing="false" onAction="#salary" text="Salary"/>
             <Button layoutX="225.0" layoutY="188.0" mnemonicParsing="false" onAction="#employee" text="Employee"/>
             <Button layoutX="325.0" layoutY="188.0" mnemonicParsing="false" onAction="#logout" text="Log Out"/>
             <Button layoutX="425.0" layoutY="188.0" mnemonicParsing="false" onAction="#exit" text="Exit"/>
